@@ -1,0 +1,13 @@
+research_online_links:
+  description: >
+    Research links from {year} to now, with information about immigration in Canada relevant to {topic} in order to {goal}
+  expected_output: >
+    List of 5 links with up to date useful information to {goal} about {topic}
+  agent: researcher_links
+
+analyze_links:
+  description: >
+    Analyse every links and get the most up to date relevant information about {topic} in order to {goal}
+  expected_output: >
+    a bullet point list of the findings to {goal} and their respective sources regarding {topic}
+  agent: information_analyzer
