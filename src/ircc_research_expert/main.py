@@ -14,6 +14,8 @@ from crewai import LLM
 from crewai.flow.flow import Flow, listen, start
 from datetime import date
 
+gpt4 = 'openai/gpt-4o-mini'
+gpt3 = 'gpt-3.5-turbo-0125'
 class QueryInformation(BaseModel) :
     topic : str = Field(description='the topic of the input')
     goal : str = Field(description='the goal of the input')
@@ -38,7 +40,7 @@ class Ircc_exp_flow(Flow[Ircc_exp_state]) :
     def get_topic(self, state) :
         print('=== define query : topic and goal')
 #llm call
-        llm = LLM(model="openai/gpt-4o-mini", response_format=QueryInformation)
+        llm = LLM(model=gpt4, response_format=QueryInformation)
         messages = [
             {'role' : 'system', 'content': 'You are a helpful assistant designed to output JSON.'},
             {'role' : 'user' , 'content' : f"""

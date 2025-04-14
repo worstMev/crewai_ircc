@@ -3,16 +3,21 @@ from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import (
     # FirecrawlSearchTool,
     FirecrawlScrapeWebsiteTool,
-    SerperDevTool
+    SerperDevTool,
+    FileReadTool
 )
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
-MODEL = "openai/gpt-4o-mini"
+gpt4 = 'openai/gpt-4o-mini'
+gpt3 = 'gpt-3.5-turbo-0125'
+MODEL = gpt3
 
 serper_tool = SerperDevTool()
-firecrawl_tool = FirecrawlScrapeWebsiteTool()
-
+firecrawl_tool = FirecrawlScrapeWebsiteTool(
+        page_options= {'onlyMainContent' :True}
+        )
+file_read_tool = FileReadTool(file_path= 'links.md')
 @CrewBase
 class ImmigrationCanResearchCrew():
     """ImmigrationCanResearchCrew crew"""
@@ -39,7 +44,7 @@ class ImmigrationCanResearchCrew():
         return Agent(
             config=self.agents_config['information_analyzer'],
             llm=MODEL,
-            tools = [firecrawl_tool],
+            tools = [file_read_tool,firecrawl_tool],
             verbose=True
         )
 
