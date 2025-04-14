@@ -5,7 +5,6 @@ from pydantic import BaseModel
 
 from crewai.flow import Flow, listen, start
 
-from ircc_research_expert.crews.poem_crew.poem_crew import PoemCrew
 from ircc_research_expert.crews.immigration_can_research_crew.immigration_can_research_crew import ImmigrationCanResearchCrew
 import json
 from typing import List, Dict
@@ -32,9 +31,9 @@ class Ircc_exp_flow(Flow[Ircc_exp_state]) :
     @start()
     def get_user_input(self) :
         print('===== What do you want to ask?')
-        self.state.query = input('What do you want to ask ?')
+#        self.state.query = input('What do you want to ask ?')
 #self.state.query = 'how to get a pr as a french speaking person in Canada?'
-        return self.state
+        return {"query" :self.state.query}
 
     @listen(get_user_input)
     def get_topic(self, state) :
@@ -74,7 +73,15 @@ class Ircc_exp_flow(Flow[Ircc_exp_state]) :
 
 def kickoff():
     exp_flow = Ircc_exp_flow()
-    exp_flow.kickoff()
+    input_dict = {
+            "topic": "",
+            "goal" : '',
+            "isAboutImCan" : False,
+            }
+    exp_flow.kickoff(inputs = {
+        "query" : "what is a pgwp?",
+        "query_info" : QueryInformation(**input_dict)
+        })
 
 
 def plot():

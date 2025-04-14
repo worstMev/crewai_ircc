@@ -1,5 +1,7 @@
-1. [PGWP-Eligible Programs - Durham College](https://durhamcollege.ca/info-for/international/new-and-current-students/updates-to-the-international-student-program)
-2. [Stay and Work in Canada - Durham College](https://durhamcollege.ca/info-for/international/new-and-current-students/student-support/working-in-canada/stay-and-work-in-canada)
-3. [Designated Learning Institutions List - Government of Canada](https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html)
-4. [Apply for a Post-Graduation Work Permit - Durham College](https://durhamcollege.ca/wp-content/uploads/Apply-For-a-Post-Graduation-Work-Permit.pdf)
-5. [Visas and Permits - Durham College](https://durhamcollege.ca/info-for/international/new-and-current-students/student-support/visas-and-permits)
+List of 5 links with up to date useful information about Post-Graduation Work Permit (PGWP) in Canada:
+
+1. [About the post-graduation work permit - Canada.ca](https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/about.html)
+2. [Work in Canada after you graduate: Who can apply](https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html)
+3. [Post Graduation Work Permit (PGWP) - University of Toronto](https://internationalexperience.utoronto.ca/international-student-services/immigration/working-in-canada/post-graduation-work-permit)
+4. [What You Need to Know About the New Post-Graduation Work Permit Requirements](https://www.gands.com/blog/2024/10/10/what-you-need-to-know-about-the-new-post-graduation-work-permit-requirements/)
+5. [Post-Graduation Work Permit - UBC Student Services](https://students.ubc.ca/international-student-guide/working-canada/post-graduation-work-permit/)
