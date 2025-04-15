@@ -22,9 +22,12 @@ class QueryInformation(BaseModel) :
 
 class Ircc_exp_state(BaseModel) :
     query : str = '',
+    #topic : str = Field(description='the topic of the input')
+    #goal : str = Field(description='the goal of the input')
+    #isAboutImCan : bool = Field(description='if it is about immigration to canada or not')
 
-#class Ircc_exp_flow(Flow[Ircc_exp_state]) :
-class Ircc_exp_flow(Flow) :
+class Ircc_exp_flow(Flow[Ircc_exp_state]) :
+#class Ircc_exp_flow(Flow) :
 
     """Flow getting details about a specific topic for Imm Canada"""
 
@@ -33,13 +36,13 @@ class Ircc_exp_flow(Flow) :
         print('===== What do you want to ask? state :',self.state)
 #        self.state.query = input('What do you want to ask ?')
 #self.state.query = 'how to get a pr as a french speaking person in Canada?'
-        return {"query" :self.state["query"]}
+        return {"query" :self.state.query}
 
     @listen(get_user_input)
     def get_topic(self, state) :
         print('=== define query : topic and goal')
 #llm call
-        query = self.state['query']
+        query = self.state.query
         llm = LLM(model=gpt4, response_format=QueryInformation)
         messages = [
             {'role' : 'system', 'content': 'You are a helpful assistant designed to output JSON.'},
@@ -54,10 +57,10 @@ class Ircc_exp_flow(Flow) :
 
         query_info_dict = json.loads(response)
         #self.state.query_info = QueryInformation(**query_info_dict)
-        self.state['query_info'] = query_info_dict
+        #self.state['query_info'] = query_info_dict
 
-        print('get_topic ',self.state['query_info']);
-        return self.state['query_info']
+        #print('get_topic ',self.state['query_info']);
+        return query_info_dict
 
     @listen(get_topic)
     def get_info(self, query_info) :

@@ -1,1 +1,1 @@
-The final compilation of the information regarding Post-Graduation Work Permit (PGWP) will be provided.
+I will start by reading the content of the 'links.md' file to get the URLs related to Post-Graduation Work Permit (PGWP). After that, I will use the Firecrawl web scrape tool for each link to gather information about PGWP eligibility, duration, application procedures, and any recent policy changes. I will then organize the findings into a bullet point list with the respective sources as requested. Let's begin by reading the 'links.md' file.
