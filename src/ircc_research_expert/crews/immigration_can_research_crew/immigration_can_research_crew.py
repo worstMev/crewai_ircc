@@ -11,7 +11,7 @@ from crewai_tools import (
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 gpt4 = 'openai/gpt-4o-mini'
 gpt3 = 'gpt-3.5-turbo-0125'
-MODEL = gpt3
+MODEL = gpt4
 
 serper_tool = SerperDevTool()
 firecrawl_tool = FirecrawlScrapeWebsiteTool(

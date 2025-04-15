@@ -1,14 +1,6 @@
-1. Title: About the post-graduation work permit - Canada.ca
-   URL: https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/about.html
-
-2. Title: Work in Canada after you graduate: Who can apply
-   URL: https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html
-
-3. Title: What You Need to Know About the New Post-Graduation Work ...
-   URL: https://www.gands.com/blog/2024/10/10/what-you-need-to-know-about-the-new-post-graduation-work-permit-requirements/
-
-4. Title: Post-Graduation Work Permit (PGWP) eligibility updates
-   URL: https://www.senecapolytechnic.ca/international/support/pgwp.html
-
-5. Title: Post-Graduation Work Permit - UBC Student Services
-   URL: https://students.ubc.ca/international-student-guide/working-canada/post-graduation-work-permit/
+List of 5 links with up to date useful information about the definition of Post-Graduation Work Permit (PGWP):
+1. [About the post-graduation work permit - Canada.ca](https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/about.html)
+2. [What You Need to Know About the New Post-Graduation Work Permit Requirements](https://www.gands.com/blog/2024/10/10/what-you-need-to-know-about-the-new-post-graduation-work-permit-requirements/)
+3. [Post-Graduation Work Permit (PGWP) eligibility updates](https://www.senecapolytechnic.ca/international/support/pgwp.html)
+4. [The major changes for international students and Post-Graduation Work Permits in Canada in 2024](https://www.cicnews.com/2024/12/year-in-review-whats-changed-for-international-students-and-post-graduation-work-permits-in-canada-in-2024-1249791.html)
+5. [Post-Graduation Work Permit - UBC Student Services](https://students.ubc.ca/international-student-guide/working-canada/post-graduation-work-permit/)

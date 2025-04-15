@@ -3,3 +3,5 @@ __pycache__/
 lib/
 .DS_Store
 .venv/
+links.md
+info.md
