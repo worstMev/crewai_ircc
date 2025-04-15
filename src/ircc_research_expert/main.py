@@ -22,29 +22,30 @@ class QueryInformation(BaseModel) :
 
 class Ircc_exp_state(BaseModel) :
     query : str = '',
-    query_info : QueryInformation = None
 
-class Ircc_exp_flow(Flow[Ircc_exp_state]) :
+#class Ircc_exp_flow(Flow[Ircc_exp_state]) :
+class Ircc_exp_flow(Flow) :
 
     """Flow getting details about a specific topic for Imm Canada"""
 
     @start()
     def get_user_input(self) :
-        print('===== What do you want to ask?')
+        print('===== What do you want to ask? state :',self.state)
 #        self.state.query = input('What do you want to ask ?')
 #self.state.query = 'how to get a pr as a french speaking person in Canada?'
-        return {"query" :self.state.query}
+        return {"query" :self.state["query"]}
 
     @listen(get_user_input)
     def get_topic(self, state) :
         print('=== define query : topic and goal')
 #llm call
+        query = self.state['query']
         llm = LLM(model=gpt4, response_format=QueryInformation)
         messages = [
             {'role' : 'system', 'content': 'You are a helpful assistant designed to output JSON.'},
             {'role' : 'user' , 'content' : f"""
           Find the goal and the topic conveyed by the following query :
-          {self.state.query}
+          {query}
           and define if the topic is about Immigration to canada or not.
         """}
             ]
@@ -52,19 +53,20 @@ class Ircc_exp_flow(Flow[Ircc_exp_state]) :
         response = llm.call(messages=messages)
 
         query_info_dict = json.loads(response)
-        self.state.query_info = QueryInformation(**query_info_dict)
+        #self.state.query_info = QueryInformation(**query_info_dict)
+        self.state['query_info'] = query_info_dict
 
-        print('get_topic ',self.state.query_info);
-        return self.state.query_info
+        print('get_topic ',self.state['query_info']);
+        return self.state['query_info']
 
     @listen(get_topic)
     def get_info(self, query_info) :
         print("====get info with :",query_info)
-        if(self.state.query_info.isAboutImCan) :
+        if(query_info["isAboutImCan"]) :
             print('fire the crew')
             result = ImmigrationCanResearchCrew().crew().kickoff(inputs = {
-                "topic" : query_info.topic,
-                "goal" : query_info.goal,
+                "topic" : query_info["topic"],
+                "goal" : query_info["goal"],
                 "year" : date.today().year - 1
                 });
             print('result ,', result)
@@ -80,7 +82,6 @@ def kickoff():
             }
     exp_flow.kickoff(inputs = {
         "query" : "what is a pgwp?",
-        "query_info" : QueryInformation(**input_dict)
         })
 
 
